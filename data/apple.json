@@ -1,0 +1,70 @@
+[
+    {
+      
+      "category_id": "01",
+      "model": "MacBook Air 2017",
+      "img":"https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "location": "Dhaka",
+      "resalePrice": "500",
+      "orginalPrice": "700",
+      "usedTime": "3 Years",
+      "sellerName": "Sneha"
+    },
+    {
+      
+      "category_id": "01",
+      "model": "MacBook Retina 2018",
+      "img":"https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "location": "Cumilla",
+      "resalePrice": "450",
+      "orginalPrice": "600",
+      "usedTime": "2 Years",
+      "sellerName": "Akash"
+    },
+    {
+      
+      "category_id": "02",
+      "model": "MacBook Air 2017",
+      "img":"https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "location": "Dhaka",
+      "resalePrice": "500",
+      "orginalPrice": "700",
+      "usedTime": "3 Years",
+      "sellerName": "Sneha"
+    },
+    {
+      
+      "category_id": "02",
+      "model": "MacBook Retina 2018",
+      "img":"https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "location": "Cumilla",
+      "resalePrice": "450",
+      "orginalPrice": "600",
+      "usedTime": "2 Years",
+      "sellerName": "Akash"
+    },
+    {
+      
+      "category_id": "03",
+      "model": "MacBook Air 2017",
+      "img":"https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "location": "Dhaka",
+      "resalePrice": "500",
+      "orginalPrice": "700",
+      "usedTime": "3 Years",
+      "sellerName": "Sneha"
+    },
+    {
+      
+      "category_id": "03",
+      "model": "MacBook Retina 2018",
+      "img":"https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "location": "Cumilla",
+      "resalePrice": "450",
+      "orginalPrice": "600",
+      "usedTime": "2 Years",
+      "sellerName": "Akash"
+    }
+    
+   
+  ]
