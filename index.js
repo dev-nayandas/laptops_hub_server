@@ -30,6 +30,7 @@ async function run(){
             const nameCollection = client.db('laptops-hub').collection('categoriesName')
             const categoryCollection = client.db('laptops-hub').collection('catagories')
             const appleCollection = client.db('laptops-hub').collection('apple')
+            const bookingCollection = client.db('laptops-hub').collection('booking')
 
             app.get('/categoriesName', async (req, res)=>{
                 const query = {}
@@ -70,6 +71,12 @@ async function run(){
             //     const laptops = await cursor.toArray();
             //     res.send(laptops);
             // });
+
+            app.post('/booking', async (req, res) => {
+                const booking = req.body;
+                const result = await bookingCollection.insertOne(booking);
+                res.send(result);
+            });
     
         }
         finally{
