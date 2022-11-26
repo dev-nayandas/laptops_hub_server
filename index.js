@@ -36,6 +36,7 @@ async function run(){
             const asusCollection = client.db('laptops-hub').collection('asus')
             const bookingCollection = client.db('laptops-hub').collection('booking')
             const userCollection = client.db('laptops-hub').collection('users')
+            const productCollection = client.db('laptops-hub').collection('products')
 
             app.get('/categoriesName', async (req, res)=>{
                 const query = {}
@@ -129,6 +130,11 @@ async function run(){
             app.post('/booking', async (req, res) => {
                 const booking = req.body;
                 const result = await bookingCollection.insertOne(booking);
+                res.send(result);
+            });
+            app.post('/products', async (req, res) => {
+                const products = req.body;
+                const result = await productCollection.insertOne(products);
                 res.send(result);
             });
             app.post('/users', async (req, res) => {
