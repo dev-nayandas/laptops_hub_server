@@ -50,6 +50,12 @@ async function run(){
                 const items = await cursor.toArray();
                 res.send(items)
             });
+            app.get('/users', async (req, res)=>{
+                const query = {}
+                const cursor=  userCollection.find(query);
+                const users = await cursor.toArray();
+                res.send(users)
+            });
             app.get('/apple', async (req, res)=>{
                 const query = {}
                 const cursor=  appleCollection.find(query);
