@@ -57,6 +57,12 @@ async function run(){
                 const users = await cursor.toArray();
                 res.send(users)
             });
+            app.get('/products', async (req, res)=>{
+                const query = {}
+                const cursor=  productCollection.find(query);
+                const products = await cursor.toArray();
+                res.send(products)
+            });
             app.get('/apple', async (req, res)=>{
                 const query = {}
                 const cursor=  appleCollection.find(query);
@@ -127,6 +133,11 @@ async function run(){
             //     res.send(laptops);
             // });
 
+            app.post('/advertisedItems', async (req, res) => {
+                const add = req.body;
+                const result = await advertisedCollection.insertOne(add);
+                res.send(result);
+            });
             app.post('/booking', async (req, res) => {
                 const booking = req.body;
                 const result = await bookingCollection.insertOne(booking);
