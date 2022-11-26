@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+const { query } = require('express');
 
 
 require('dotenv').config();
@@ -65,6 +66,30 @@ async function run(){
                 const cursor=  asusCollection.find(query);
                 const asus = await cursor.toArray();
                 res.send(asus)
+            });
+           
+
+
+
+            // app.get('/orders', async (req, res)=>{
+            //     const email = req.params.email;
+            //     const query = {email: email};
+            //     const orders = await bookingCollection.find(query).toArray();
+            //     res.send (orders)
+            // });
+
+
+            app.get('/orders', async (req, res)=>{
+                let query = {}
+                if (req.query.email){
+                  query = {
+                    email : req.query.email
+                  }
+                }
+                
+                const cursor =  bookingCollection.find(query);
+                const orders = await cursor.toArray();
+                res.send(orders)
             });
             // app.get('/catagories', async (req, res)=>{
             //     const query = {}
