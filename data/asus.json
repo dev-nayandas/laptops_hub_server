@@ -1,0 +1,24 @@
+[
+    {
+      
+        "category_id": "01",
+        "model": "Asus Zen book",
+        "img":"https://images.pexels.com/photos/9052778/pexels-photo-9052778.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "location": "Narayanganj",
+        "resalePrice": "250",
+        "orginalPrice": "750",
+        "usedTime": "5 Years",
+        "sellerName": "Ahsan"
+      },
+      {
+        
+        "category_id": "01",
+        "model": "Asus vivo Book",
+        "img":"https://images.pexels.com/photos/13987250/pexels-photo-13987250.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "location": "Gazipur",
+        "resalePrice": "30",
+        "orginalPrice": "450",
+        "usedTime": "2 Years",
+        "sellerName": "Lucky"
+      }
+]

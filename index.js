@@ -29,7 +29,10 @@ async function run(){
         try{
             const nameCollection = client.db('laptops-hub').collection('categoriesName')
             const categoryCollection = client.db('laptops-hub').collection('catagories')
+            const advertisedCollection = client.db('laptops-hub').collection('advertisedItems')
             const appleCollection = client.db('laptops-hub').collection('apple')
+            const samsungCollection = client.db('laptops-hub').collection('samsung')
+            const asusCollection = client.db('laptops-hub').collection('asus')
             const bookingCollection = client.db('laptops-hub').collection('booking')
 
             app.get('/categoriesName', async (req, res)=>{
@@ -38,11 +41,30 @@ async function run(){
                 const names = await cursor.toArray();
                 res.send(names)
             });
+
+            app.get('/advertisedItems', async (req, res)=>{
+                const query = {}
+                const cursor=  advertisedCollection.find(query);
+                const items = await cursor.toArray();
+                res.send(items)
+            });
             app.get('/apple', async (req, res)=>{
                 const query = {}
                 const cursor=  appleCollection.find(query);
                 const apple = await cursor.toArray();
                 res.send(apple)
+            });
+            app.get('/samsung', async (req, res)=>{
+                const query = {}
+                const cursor=  samsungCollection.find(query);
+                const samsung = await cursor.toArray();
+                res.send(samsung)
+            });
+            app.get('/asus', async (req, res)=>{
+                const query = {}
+                const cursor=  asusCollection.find(query);
+                const asus = await cursor.toArray();
+                res.send(asus)
             });
             // app.get('/catagories', async (req, res)=>{
             //     const query = {}

@@ -1,0 +1,35 @@
+[
+    {
+      
+        "category_id": "01",
+        "model": "Samsung Galaxy Book Pro 360",
+        "img":"https://images.pexels.com/photos/11833896/pexels-photo-11833896.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "location": "Natore",
+        "resalePrice": "300",
+        "orginalPrice": "450",
+        "usedTime": "5 Years",
+        "sellerName": "Onnonna"
+      },
+      {
+        
+        "category_id": "01",
+        "model": "Samsung Galaxy Book 2 15",
+        "img":"https://images.pexels.com/photos/8101898/pexels-photo-8101898.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "location": "Rajsahi",
+        "resalePrice": "600",
+        "orginalPrice": "650",
+        "usedTime": "1 Years",
+        "sellerName": "Tanvir"
+      },
+      {
+      
+        "category_id": "02",
+        "model": "MacBook Air 2017",
+        "img":"https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "location": "Dhaka",
+        "resalePrice": "500",
+        "orginalPrice": "700",
+        "usedTime": "3 Years",
+        "sellerName": "Sneha"
+      }
+]
