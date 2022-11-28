@@ -38,6 +38,22 @@ async function run(){
             const userCollection = client.db('laptops-hub').collection('users')
             const productCollection = client.db('laptops-hub').collection('products')
 
+
+
+
+
+
+
+
+            app.get('/sellers',async (req, res) => {
+                const accountType = req.query.accountType;
+                console.log(accountType)
+                const query = {accountType:buyer};
+                const sellers = await userCollection.find(query).toArray();
+                
+                res.send(sellers);
+            })
+
             app.get('/categoriesName', async (req, res)=>{
                 const query = {}
                 const cursor=  nameCollection.find(query);
@@ -56,6 +72,30 @@ async function run(){
                 const cursor=  userCollection.find(query);
                 const users = await cursor.toArray();
                 res.send(users)
+            });
+
+            app.get('/users/admin/:email',async (req, res)=>{
+                const email = req.params.email;
+                const query = {email};
+                const user = await userCollection.findOne(query);
+                res.send({isAdmin:user?.accountType === 'Admin'});
+
+            });
+
+            app.get('/users/buyer/:email',async (req, res)=>{
+                const email = req.params.email;
+                const query = {email};
+                const user = await userCollection.findOne(query);
+                res.send({isBuyer:user?.accountType === 'Buyer'});
+
+            });
+            
+            app.get('/users/seller/:email',async (req, res)=>{
+                const email = req.params.email;
+                const query = {email};
+                const user = await userCollection.findOne(query);
+                res.send({isSeller:user?.accountType === 'Seller'});
+
             });
             app.get('/products', async (req, res)=>{
                 const query = {}
@@ -96,11 +136,8 @@ async function run(){
             app.get('/orders', async (req, res)=>{
                 let query = {}
                 if (req.query.email){
-                  query = {
-                    email : req.query.email
-                  }
+                  query = {email : req.query.email}
                 }
-                
                 const cursor =  bookingCollection.find(query);
                 const orders = await cursor.toArray();
                 res.send(orders)
