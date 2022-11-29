@@ -41,7 +41,7 @@ async function run(){
 
 
 
-
+           
 
 
 
@@ -74,6 +74,13 @@ async function run(){
                 res.send(users)
             });
 
+            app.delete('/users/:id', async (req, res) => {
+                const id = req.params.id;
+                const query = { _id: ObjectId(id) }
+                const result = await userCollection.deleteOne(query);
+                res.send(result);
+            });
+
             app.get('/users/admin/:email',async (req, res)=>{
                 const email = req.params.email;
                 const query = {email};
@@ -97,12 +104,12 @@ async function run(){
                 res.send({isSeller:user?.accountType === 'Seller'});
 
             });
-            app.get('/products', async (req, res)=>{
-                const query = {}
-                const cursor=  productCollection.find(query);
-                const products = await cursor.toArray();
-                res.send(products)
-            });
+            // app.get('/products', async (req, res)=>{
+            //     const query = {}
+            //     const cursor=  productCollection.find(query);
+            //     const products = await cursor.toArray();
+            //     res.send(products)
+            // });
             app.get('/apple', async (req, res)=>{
                 const query = {}
                 const cursor=  appleCollection.find(query);
@@ -142,6 +149,28 @@ async function run(){
                 const orders = await cursor.toArray();
                 res.send(orders)
             });
+            app.get('/products', async (req, res)=>{
+                let query = {}
+                if (req.query.email){
+                  query = {email : req.query.email}
+                }
+                const cursor =  productCollection.find(query);
+                const products= await cursor.toArray();
+                res.send(products)
+            });
+
+            // app.get('/products', async (req, res)=>{
+            //     let query = {}
+            //     if (req.query.email){
+            //         query = {email : req.query.email}
+            //       }
+            //     const cursor=  productCollection.find(query);
+            //     const products = await cursor.toArray();
+            //     res.send(products)
+            // });
+
+
+            
             // app.get('/catagories', async (req, res)=>{
             //     const query = {}
             //     const cursor=  categoryCollection.find(query);
